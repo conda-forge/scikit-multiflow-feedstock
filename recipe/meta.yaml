@@ -1,6 +1,6 @@
 {% set name = "scikit-multiflow" %}
-{% set version = "0.4.0" %}
-{% set sha256 = "7ee61ec2658fb2516d97c1c94b21bf09b6f57b628afe112c7cef1287b112e385" %}
+{% set version = "0.4.1" %}
+{% set sha256 = "ed4f791107cb7f789f0bb0620c50e743a4d397905146a4d06c62eb98607aa101" %}
 
 package:
   name: {{ name|lower }}
