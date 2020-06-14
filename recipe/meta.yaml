@@ -1,6 +1,6 @@
 {% set name = "scikit-multiflow" %}
-{% set version = "0.4.1" %}
-{% set sha256 = "ed4f791107cb7f789f0bb0620c50e743a4d397905146a4d06c62eb98607aa101" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "5585428d8b88316e775f7e164cd1bb82edcb65ec0031a0e8a77527a8108b089a" %}
 
 package:
   name: {{ name|lower }}
@@ -11,10 +11,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
-    - "{{ PYTHON }} -m pip install . --no-deps -vv"
-  skip: True  # [py<35]
+    - {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: true  # [py<35]
 
 requirements:
   build:
@@ -43,7 +43,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'A machine learning framework for multi-output/multi-label and stream data.'
+  summary: A machine learning framework for multi-output/multi-label and stream data.
 
   description: |
     scikit-multiflow is inspired by MOA, the most popular open source framework for machine learning for data streams,
