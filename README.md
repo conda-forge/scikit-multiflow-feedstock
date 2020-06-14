@@ -7,12 +7,13 @@ Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: A machine learning framework for multi-output/multi-label and stream data.
+Summary: A machine learning package for streaming data in Python.
 
-scikit-multiflow is inspired by MOA, the most popular open source framework for machine learning for data streams,
-and MEKA, an open source implementation of methods for multi-label learning. scikit-multiflow is also inspired on
-scikit-learn, the most popular framework for machine learning in Python. Following the SciKits philosophy,
-scikit-multiflow is an open source machine learning framework for multi-output/multi-label and stream data.
+scikit-multiflow is an open-source machine learning package for streaming data.
+It extends the scientific tools available in the Python ecosystem.
+scikit-multiflow is intended for streaming data applications where data is
+continuously generated and must be processed and analyzed on the go.
+Data samples are not stored, so learning methods are exposed to new data only once.
 
 
 Current build status
@@ -202,4 +203,5 @@ Feedstock Maintainers
 =====================
 
 * [@jacobmontiel](https://github.com/jacobmontiel/)
+* [@smastelini](https://github.com/smastelini/)
 
