@@ -23,17 +23,17 @@ requirements:
     - python
     - pip
     - setuptools
-    - numpy=1.17.3
+    - numpy =1.17.3
     - cython
     - pytest-runner
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - scipy >1.0.0
+    - scipy >=1.0.0
     - scikit-learn >=0.20
     - sortedcontainers >=1.5.7
     - matplotlib-base >=2.0.0
-    - pandas>=0.25.3
+    - pandas >=0.25.3
 
 test:
   imports:
@@ -47,11 +47,11 @@ about:
   summary: A machine learning package for streaming data in Python.
 
   description: |
-  scikit-multiflow is an open-source machine learning package for streaming data.
-  It extends the scientific tools available in the Python ecosystem.
-  scikit-multiflow is intended for streaming data applications where data is 
-  continuously generated and must be processed and analyzed on the go.
-  Data samples are not stored, so learning methods are exposed to new data only once.
+    scikit-multiflow is an open-source machine learning package for streaming data.
+    It extends the scientific tools available in the Python ecosystem.
+    scikit-multiflow is intended for streaming data applications where data is 
+    continuously generated and must be processed and analyzed on the go.
+    Data samples are not stored, so learning methods are exposed to new data only once.
   doc_url: https://scikit-multiflow.github.io/scikit-multiflow/
   dev_url: https://github.com/scikit-multiflow/scikit-multiflow
 
