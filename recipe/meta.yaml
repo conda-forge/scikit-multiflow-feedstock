@@ -23,7 +23,7 @@ requirements:
     - python
     - pip
     - setuptools
-    - numpy
+    - numpy 1.11.*
     - cython >=0.28.5
     - pytest-runner
   run:
