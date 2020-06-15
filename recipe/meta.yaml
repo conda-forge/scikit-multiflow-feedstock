@@ -14,9 +14,9 @@ build:
   number: 0
   skip: true  # [py<35]
   script:
-    - {{ PYTHON }} -m pip install . -vv                                     # [not win]
-    - {{ PYTHON }} -m pip wheel -v . -w wheelhouse/                         # [win]
-    - {{ PYTHON }} -m pip install $(package_name) --no-index -f wheelhouse  # [win]
+    - {{ PYTHON }} -m pip install . -vv                                # [not win]
+    - {{ PYTHON }} -m pip wheel -v . -w wheelhouse/                    # [win]
+    - {{ PYTHON }} -m pip install {{ name }} --no-index -f wheelhouse  # [win]
 
 requirements:
   build:
