@@ -14,22 +14,18 @@ build:
   number: 0
   skip: true  # [py<35]
   script:
-    - rm $PREFIX/include/cblas.h    # [not win]
-    - del /f %LIBRARY_INC%\cblas.h  # [win]
-    # build the C files in parallel.
-    - {{ PYTHON }} setup.py build_ext -j{{ CPU_COUNT }}
     - {{ PYTHON }} -m pip install . -vv
+    - {{ PYTHON }} setup.py build_ext -j2                                # [win]
+    - {{ PYTHON }} setup.py install --single-version-externally-managed  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - llvm-openmp  # [osx]
   host:
     - python
     - pip
     - setuptools
-    - llvm-openmp  # [osx]
     - cython
     - libcblas
     - numpy
