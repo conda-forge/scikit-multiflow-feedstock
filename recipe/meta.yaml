@@ -15,8 +15,6 @@ build:
   skip: true  # [py<35]
   script:
     - {{ PYTHON }} -m pip install . -vv
-    - {{ PYTHON }} setup.py build_ext -j2                                # [win]
-    - {{ PYTHON }} setup.py install --single-version-externally-managed  # [win]
 
 requirements:
   build:
