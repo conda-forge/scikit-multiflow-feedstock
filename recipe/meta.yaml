@@ -25,7 +25,7 @@ requirements:
     - pip
     - cython
     - libcblas
-    - numpy
+    - numpy ==1.17.3
     - scipy >=1.0.0
     - scikit-learn >=0.20
     - sortedcontainers >=1.5.7
