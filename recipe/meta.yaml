@@ -1,6 +1,6 @@
 {% set name = "scikit-multiflow" %}
-{% set version = "0.4.1" %}
-{% set sha256 = "ed4f791107cb7f789f0bb0620c50e743a4d397905146a4d06c62eb98607aa101" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "5585428d8b88316e775f7e164cd1bb82edcb65ec0031a0e8a77527a8108b089a" %}
 
 package:
   name: {{ name|lower }}
@@ -11,28 +11,36 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
+  skip: true  # [py<35]
+  skip: True  # [win]
   script:
-    - "{{ PYTHON }} -m pip install . --no-deps -vv"
-  skip: True  # [py<35]
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
+    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
     - pip
-    - setuptools
-    - numpy
+    - cython
+    - libcblas
+    - numpy >=1.14.0
+    - scipy >=1.0.0
+    - scikit-learn >=0.20
+    - sortedcontainers >=1.5.7
+    - matplotlib-base >=2.0.0
+    - pandas >=0.25.3
     - pytest-runner
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - scipy >1.0.0
+    - scipy >=1.0.0
     - scikit-learn >=0.20
     - sortedcontainers >=1.5.7
     - matplotlib-base >=2.0.0
-    - pandas >=0.21.0
+    - pandas >=0.25.3
 
 test:
   imports:
@@ -43,16 +51,18 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'A machine learning framework for multi-output/multi-label and stream data.'
+  summary: A machine learning package for streaming data in Python.
 
   description: |
-    scikit-multiflow is inspired by MOA, the most popular open source framework for machine learning for data streams,
-    and MEKA, an open source implementation of methods for multi-label learning. scikit-multiflow is also inspired on
-    scikit-learn, the most popular framework for machine learning in Python. Following the SciKits philosophy,
-    scikit-multiflow is an open source machine learning framework for multi-output/multi-label and stream data.
+    scikit-multiflow is an open-source machine learning package for streaming data.
+    It extends the scientific tools available in the Python ecosystem.
+    scikit-multiflow is intended for streaming data applications where data is 
+    continuously generated and must be processed and analyzed on the go.
+    Data samples are not stored, so learning methods are exposed to new data only once.
   doc_url: https://scikit-multiflow.github.io/scikit-multiflow/
   dev_url: https://github.com/scikit-multiflow/scikit-multiflow
 
 extra:
   recipe-maintainers:
     - jacobmontiel
+    - smastelini
