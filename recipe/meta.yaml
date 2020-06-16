@@ -13,10 +13,9 @@ source:
 build:
   number: 0
   skip: true  # [py<35]
+  skip: True  # [win]
   script:
-    - {{ PYTHON }} -m pip install . -vv                                # [not win]
-    - {{ PYTHON }} -m pip wheel -v . -w wheelhouse/                    # [win]
-    - {{ PYTHON }} -m pip install {{ name }} --no-index -f wheelhouse  # [win]
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -27,7 +26,7 @@ requirements:
     - pip
     - cython
     - libcblas
-    - numpy ==1.17.3
+    - numpy >=1.14.0
     - scipy >=1.0.0
     - scikit-learn >=0.20
     - sortedcontainers >=1.5.7
