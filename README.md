@@ -1,11 +1,11 @@
-About scikit-multiflow
-======================
+About scikit-multiflow-feedstock
+================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scikit-multiflow-feedstock/blob/main/LICENSE.txt)
 
 Home: https://scikit-multiflow.github.io/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scikit-multiflow-feedstock/blob/main/LICENSE.txt)
 
 Summary: A machine learning package for streaming data in Python.
 
