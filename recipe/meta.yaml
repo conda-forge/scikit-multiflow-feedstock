@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   skip: true  # [py<35]
   script:
     - {{ PYTHON }} -m pip install . --no-deps -vv
@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -34,7 +35,6 @@ requirements:
     - pytest-runner
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - scipy >=1.0.0
     - scikit-learn >=0.20
     - sortedcontainers >=1.5.7
